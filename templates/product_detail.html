@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block product %} active {% endblock %}   
+{% block title %} About{%endblock %} 
+{% block link %}   
+<li><span style="color:#fff;">Product Detail</span></li>
+{% endblock %}
+
+{% block content %} 
+<div class="main" style="background: #f2f5f9;">
+   <!-- shop-banner-area start -->
+    <section class="shop-banner-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-xl-6 col-lg-6">
+
+                    <div class="shop-thumb-tab">
+                        <ul class="nav" id="myTab2" role="tablist">
+                            {% if images.count > 0 %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab"
+                                        aria-selected="true"><img src="{{p.main_image|get_img}}" alt=""> </a>
+                                </li>
+                            {% endif %}
+                            
+                            {% for img in images %}
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#img_{{img.id}}" role="tab"
+                                        aria-selected="false"><img src="{{img.image|get_img}}" alt=""></a>
+                                </li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </div>
+
+                    <div class="product-details-img mb-30">
+                        <div class="tab-content" id="myTabContent2">
+                            <div class="tab-pane fade show active" id="main" role="tabpanel">
+                                <div class="product-large-img">
+                                    <img src="{{p.main_image|get_img}}" alt="">
+                                </div>
+                            </div>
+                            {% for img in images %}
+                                <div class="tab-pane fade" id="img_{{img.id}}" role="tabpanel">
+                                    <div class="product-large-img">
+                                        <img src="{{img.image|get_img}}" alt="">
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="product-details-wrapper mb-30">
+                        <div class="product-text mb-30">
+                            <h5>REF <b style="color: #e4573d;"> {% if p.ref %} REF {{p.ref}} {% endif %}</b></h5>
+                            <h4>{{p.name}}</h4>
+                           
+                        </div>
+                        <div class="product-variant">
+                            <div class="product-desc mb-30">{{p.desc|safe}}</div>
+                            <div class="product-info-list mb-30"><img src = "{{p.side_image|get_img}}" /></div>
+                           
+                           
+                            <div class="product-02-list">
+                                <ul>
+                                    <li>
+                                        <div class="pro-02-list-info f-left"><span>Brand :</span></div>
+                                        <div class="pro-02-list-text">
+                                            <span>
+                                                <a {% if p.brand.link %} href="{{p.brand.link }}" target="blank" else href="#" {% endif %}>{{p.brand}}</a>
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="pro-02-list-info f-left"><span>Category :</span></div>
+                                        <div class="pro-02-list-text"><span>{{p.subcat.category}}</span></div>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- shop-banner-area end -->
+
+    <!-- product-desc-area start -->
+    {% if p.additional_information %}
+        <section class="product-desc-area pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 mb-30">
+                        <div class="bakix-details-tab">
+                            <ul class="nav text-center pb-30 mb-50" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="id-add-in" data-toggle="tab" href="#id-add" role="tab"
+                                        aria-controls="profile" aria-selected="false">Additional Information</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="myTabContent">
+
+                            <div class="tab-pane fade show active" id="id-add" role="tabpanel" aria-labelledby="id-add-in">
+                                <div class="additional-info">
+                                    <div class="table-responsive">
+                                        
+                                        {{p.additional_information|safe}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="product-desc-imgmb-30">
+                            <img src="assets/img/products/pr-banner.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    <!-- product-desc-area end -->
+
+   
+    <!-- product-area-start -->
+    {% if related %}
+    <div class="row mt-40">
+        <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+            <div class="section-title text-center mb-65">
+                <h2>Related Products</h2>
+                <p>Checkout other related products with <b>'{{p.subcat}}'</b> subcategory.</p>
+            </div>
+        </div>
+    </div>
+    <div class="product-tab-content">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+
+                    {% for rp in related %}
+                    <div class="col-xl-4 cl-lg-4 col-md-6">
+                        <div class="product-03-wrapper grey-2-bg pos-rel text-center mb-30">
+                            <div class="row">
+                                {% if rp.hot %}
+                                    <div class="col-4 badge-tag">
+                                        <span class="product-tag pro-tag hot-1">Hot</span>
+                                       
+                                    </div>
+                                {% endif %}
+                                {% if rp.new %} 
+                                    <div class="col-4 badge-tag">
+                                        <span class="product-tag pro-tag hot-1 hot-2">new</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+
+                            <div class="product-02-img pos-rel">
+                                <a href="{% url 'main:product_detail' pk=rp.id %}">
+                                    <img src="{{rp.main_image|get_img}}" height="310px" alt="">
+                                </a>
+                                <!-- <div class="product-action">
+                                    <a class="action-btn" href="#"><i class="far fa-heart"></i></a>
+                                    <a class="action-btn" href="#"><i class="far fa-cart-plus"></i></a>
+                                    <a class="action-btn" href="#"><i class="far fa-search"></i></a>
+                                </div> -->
+                            </div>
+                            <div class="product-text">
+                                <h5>{% if rp.ref %} REF {{rp.ref}} {% endif %}</h5>
+                                <h4><a href="{% url 'main:product_detail' pk=rp.id %}">{{rp.name}}</a></h4>
+                                <span>{{rp.brand}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    {% endif %}
+    <!-- product-area-end -->
+
+</div>
+
+{% endblock %}

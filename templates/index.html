@@ -1,0 +1,460 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block home %} active {% endblock %}    
+{% block content %} 
+
+    
+        <main>
+           <!-- banner-area-start -->
+           <div class="banner-area banner-pb  pb-20 ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 p-0 ">
+                        <div class="banners-active">
+                                <div class="banners-wrapper mb-30">
+                                    <div class="banner-img pos-rel">
+                                        <a href="/">
+                                            <img src="{% static 'img/bg/home.jpg' %}"  alt="">
+                                        </a>
+                                        
+                                        <div class="banner-content col-12" >
+                                            <h2 style="color: #4e97fd;">Blueland</h2>
+                                            <p class="m-0 mb-3" style="font-size: 22px; ">Medical Trading P.L.C</p>
+                                            <span >Importing standard products</span>
+                                            <br>
+                                            <span>for our clients</span>
+                                            
+                                            <div class="bannerss-button mt-5">
+                                                <a class="c-btn" href="{% url 'about' %}">Read More About Us </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                                <div class="banner-img pos-rel">
+                                    <a ><img src="{% static 'img/bg/bg4.jpg' %}" alt=""></a>
+                                    <div class="banner-content">
+                                        <h2 style="color: #4e97fd;">Blueland</h2>
+                                        <p class="m-0 mb-3" style="font-size: 22px;">Medical Trading</p>
+                                        <span >Importing standard products</span>
+                                        <br>
+                                        <span>for our clients</span>
+                                        
+                                        <div class="bannerss-button mt-5">
+                                            <a class="c-btn" href="{% url 'about' %}">Read More About Us </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                            </div> 
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- banner-area-end -->
+
+              <!-- product-feature-area-start -->
+              <div class="product-feature-area pt-30 pb-20">
+                <div class="container">
+                        <div class="col-xl-9 col-lg-9 col-md-10 text-center" style="margin: auto;" >
+                            <div class="section-title text-center mb-65">
+                                <h2 >Brief Introduction</h2>
+                                <div class="section-title ">
+                                    <p style="color:#000"> <b style="color: #4e97fd;">Blueland</b> medical trading is one of the pharmaceuticals and medical devices distributer in Ethiopia. The company has more than six years’ history and experienced professionals who is expert on ophthalmic 
+                                        medical devices and other medical devices, medical equipment and supplies promotion and distribution.   
+                                    </p>
+                                </div>
+                                
+                                <div class="bannerss-button mt-5">
+                                    <a class="c-btn" href="{% url 'about' %}">Read More About Us </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    
+                </div>
+            </div>
+            <!-- product-feature-area-end -->
+
+
+             <!-- counter-area-start -->
+    <div class="counter-area pb-50" >
+        <div class="container">
+            <div class="counter-bg pt-100">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="counter-wrapper text-center mb-30">
+                            <div class="counter-icon">
+                                <i class="fal fa-heart"></i>
+                            </div>
+                            <div class="counter-text">
+                                <p>Over</p>
+                                <h2 class="counter">250</h2>
+                                <span>Saticfied Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="counter-wrapper text-center mb-30">
+                            <div class="counter-icon">
+                                <i class="fad fa-box-alt"></i>
+                            </div>
+                            <div class="counter-text">
+                                <p>Around</p>
+                                <h2 class="counter">{{prods_count}}</h2>
+                                <span>Products</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="counter-wrapper text-center mb-30">
+                            <div class="counter-icon">
+                                <i class="fal fa-users"></i>
+                            </div>
+                            <div class="counter-text">
+                                <p>A Team of</p>
+                                <h2 class="counter">13</h2>
+                                <span> Professionals</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="counter-wrapper text-center mb-30">
+                            <div class="counter-icon">
+                                <i class="fal fa-history"></i>
+                            </div>
+                            <div class="counter-text">
+                                <p>Over</p>
+                                <h2 class="counter">5</h2>
+                                <span>Years of Experiance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- counter-area-end -->
+
+            
+
+             <!-- features-area-start -->
+                <div class="features-02-area pt-70 pb-70">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+                                <div class="section-title text-center mb-65">
+                                    <h2>Our Core values</h2>
+                                    <p>Here are our core values that distinguish us from others...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-xl-3 col-lg-3 col-md-6">
+                                <div class="feature-02-wrapper text-center mb-30">
+                                    <div class="p-feature-text">
+                                        <h3>Customer Satisfaction</h3>
+                                        <div class="feature-02-icon">
+                                            <img src="{% static 'img/icon/sat.png' %}" alt="">
+                                        </div>
+                                        <p>Our Customers are satisfied with our services</p>
+                                        <a href="#"><i class="fal fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-xl-3 col-lg-3 col-md-6">
+                                <div class="feature-02-wrapper text-center mb-30">
+                                    <div class="p-feature-text">
+                                        <h3>Transparency & Accountability</h3>
+                                        <div class="feature-02-icon">
+                                            <img src="{% static 'img/icon/trans.png' %}" alt="">
+                                        </div>
+                                        <p>Clients Can contact us about anything</p>
+                                        <a href="#"><i class="fal fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-lg-3 col-md-6">
+                                <div class="feature-02-wrapper text-center mb-30">
+                                    <div class="p-feature-text">
+                                        <h3>Good corporate Governance</h3>
+                                        <div class="feature-02-icon">
+                                            <img src="{% static 'img/icon/man.png' %}" alt="">
+                                        </div>
+                                        <p>Have a managment team of senior professionals.</p>
+                                        <a href="#"><i class="fal fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-xl-3 col-lg-3 col-md-6">
+                                <div class="feature-02-wrapper text-center mb-30">
+                                    <div class="p-feature-text">
+                                        <h3>Corporate Social Responsibility</h3>
+                                        <div class="feature-02-icon">
+                                            <img src="{% static 'img/icon/csr.jpg' %}" alt="">
+                                        </div>
+                                        <p>We take care of our responsibilities and duties</p>
+                                        <a href="#"><i class="fal fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            <!-- features-area-end -->
+
+
+             <!-- product-area-start -->
+            <div class="product-area pb-40">
+                <div class="container">
+                    <div class="tab-border mt-30 mb-30">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-6">
+                                <div class="section-title mb-25">
+                                    <h2>Featured Products</h2>
+                                    <p>These are our featured products</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-6">
+                                <div class="product-tab mb-25">
+                                    <ul class="nav justify-content-start justify-content-lg-end product-nav" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#new" role="tab" aria-controls="home" aria-selected="true">
+                                                <i class="far fa-shield-check"></i> Latest
+                                            </a>
+                                        </li>
+                                        {% if hot %}
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#hot" role="tab" aria-controls="profile" aria-selected="false">
+                                                <i class="far fa-star"></i>  Best Seller
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-tab-content">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    {% for p in new %}
+                                        <div class="col-xl-4 cl-lg-4 col-md-6">
+                                            <div class="product-wrapper text-center mb-45">
+                                                <div class="product-img pos-rel">
+                                                    <a href="{% url 'main:product_detail' pk=p.id %}">
+                                                        <img src="{{p.main_image|get_img}}" style="width: 220px; height:270px;" alt="">
+                                                        <img class="secondary-img" src="{{p.side_image|get_img}}" alt="">
+                                                    </a>
+                                                    
+                                                </div>
+                                                <div class="product-text">
+                                                    <h5>{% if p.ref %} REF {{p.ref}} {% endif %}</h5>
+                                                    <h4><a href="{% url 'main:product_detail' pk=p.id %}">{{p.name}}</a></h4>
+                                                    <span>{{p.brand}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="hot" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    {% for p in hot %}
+                                        <div class="col-xl-4 cl-lg-4 col-md-6">
+                                            <div class="product-wrapper text-center mb-45">
+                                                <div class="product-img pos-rel">
+                                                    <a href="{% url 'main:product_detail' pk=p.id %}">
+                                                        <img src="{{p.main_image|get_img}} " style="width: 220px; height:270;"  alt="">
+                                                        <img class="secondary-img" src="{{p.side_image|get_img}}" alt="">
+                                                    </a>
+                                                    
+                                                </div>
+                                                <div class="product-text">
+                                                    <h5>{{p.ref}}</h5>
+                                                    <h4><a href="{% url 'main:product_detail' pk=p.id %}">{{p.name}}</a></h4>
+                                                    <span>{{p.brand}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+ 
+                                    
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- product-area-end -->
+
+            <!-- used-list-area-start -->
+            <div class="used-list-area pb-45" >
+                <div class="container">
+                    <div class="used-list-bg pt-100">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+                                <div class="section-title text-center mb-65">
+                                    <h1>Why <b style="color:#4e97fd">Blueland</b></h1>
+                                    <p>THESE ARE OUR QUALITIES</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3" style="background-color:#4e97fd">
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="features-wrapper mb-30">
+                                    <div class="features-icon fe-1 f-left">
+                                        <i class="fal fa-ship"></i>
+                                    </div>
+                                    <div class="features-text text-center">
+                                        <h3>Fast Delivery</h3>
+                                        <p>A delivery service you can always depend on.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="features-wrapper mb-30">
+                                    <div class="features-icon fe-3 f-left">
+                                        <i class="fad fa-box-alt"></i>
+                                    </div>
+                                    <div class="features-text text-center">
+                                        <h3>Quality Products</h3>
+                                        <p>Importing quality products for our clients</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="features-wrapper mb-30">
+                                    <div class="features-icon fe-2 f-left">
+                                         <i class="fal fa-usd-circle"></i>
+                                    </div>
+                                    <div class="features-text text-center">
+                                        <h3>Fair Pay</h3>
+                                        <p>We offer our imported products with fair payment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="features-wrapper mb-30">
+                                    <div class="features-icon fe-2 f-left">
+                                         <i class="fal fa-user-circle"></i>
+                                    </div>
+                                    <div class="features-text text-center">
+                                        <h3>Highly Skilled Team</h3>
+                                        <p>Have a team of well experianced professionals.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="features-wrapper mb-30">
+                                    <div class="features-icon  f-left">
+                                        <i class="fal fa-unlock-alt"></i>
+                                    </div>
+                                    <div class="features-text text-center">
+                                        <h3>100% Secure</h3>
+                                        <p>We are known for delivering products safely.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="features-wrapper mb-30">
+                                    <div class="features-icon fe-1 f-left">
+                                        <i class="fal fa-history"></i>
+                                    </div>
+                                    <div class="features-text text-center">
+                                        <h3>Experiance</h3>
+                                        <p>One of the most experianced importing companies in Ethiopia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+
+           
+           
+
+            <!-- brand-area-start -->
+            <div class="brand-area pt-80 pb-00">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-xl-7 col-lg-7 col-md-8">
+                            <div class="section-title mb-30">
+                                <h2>OUR PARTNERS</h2>
+                                <p>Our dear partners over the years</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-4">
+                            <div class="b-button gray-b-button shop-btn s-btn text-md-right mb-30">
+                                <a href="{% url 'contact' %}">Be our Partner <i class="fal fa-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row  col-12">
+                            {% for p in partners %}
+                                <div class="col-xl-2 col-lg-2 col-md-3 col-6">
+                                    <div class="single-brand mb-60 text-center">
+                                        <a {% if p.link %} href="{{p.link}}" target="blank"  {% endif %}>
+                                            <img src="{{p.logo|get_img}}" width="150" height="100" alt="">
+                                            
+                                        </a>
+                                       
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- brand-area-end -->
+
+
+            
+        </main>
+        <div class="row col-12 px-0 py-3 m-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7880.659588049196!2d38.846092!3d9.03365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd291f77d83e00a2d!2zRGFpbHkgTWluaSBNYXJ0IHwgV2VzZW4gfCDhi7Thi63hiIog4Yia4YqSIOGIm-GIreGJtSB8IOGLiOGIsOGKlQ!5e0!3m2!1sen!2set!4v1652522549188!5m2!1sen!2set" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           
+        </div>
+{% endblock %}
+{% block js %} 
+<script>
+    
+    // var btn_0 = document.getElementById('slick-slide-control00');
+    // var btn_1 = document.getElementById('slick-slide-control01');
+    // var clicked = "btn_0";
+    // setInterval(slider, 4000);
+    // function slider(){
+    //     if (clicked == "btn_0"){btn_1.click(); clicked = "btn_1";}
+    //     else{
+    //         btn_0.click(); clicked = "btn_0";
+    //     }
+       
+    // }
+    
+</script>
+{% endblock %}

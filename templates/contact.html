@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block contact %} active {% endblock %} 
+{% block title %} Contact Us{%endblock %} 
+{% block link %}   
+<li><span style="color:#fff;">Contact Us</span></li>
+{% endblock %}
+{% block content %} 
+<main>
+    <!-- contact-area-start -->
+    <div class="contact-area pos-rel pt-140 pb-120">
+        <div class="shape d-none d-xl-block">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5">
+                    <div class="contact-address-wrapper mt-20 mb-30">
+                        <div class="section-title mb-30">
+                            <h2>Conatct Us</h2>
+                        </div>
+                        <ul class="contact-address-link">
+                            <li>
+                                <div class="contact-address-icon f-left mr-25">
+                                    <i class="far fa-map-marked-alt"></i>
+                                </div>
+                                <div class="contact-address-text">
+                                    <span>Head Office</span>
+                                    <h4>Wesen, Breks Building, 3rd Floor.<br> Addis Ababa, Ethiopia.</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-address-icon f-left mr-25">
+                                    <i class="far fa-phone"></i>
+                                </div>
+                                <div class="contact-address-text">
+                                    <span>phone number</span>
+                                    <h4>+251-911-3806-47 <br> 0116-6813-57</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-address-icon f-left mr-25">
+                                    <i class="far fa-envelope-open"></i>
+                                </div>
+                                <div class="contact-address-text">
+                                    <span>email address</span>
+                                    <h4>nebiyathero17@gmail.com </h4>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-address-icon f-left mr-25">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="contact-address-text">
+                                    <span>Head Office</span>
+                                    <h4>Monday - Friday, <br> 08 am - 09 pm</h4>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-7 col-lg-7">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-center">
+                                <div class="section-title text-center mb-65">
+                                    <h2>Send Us A Message</h2>
+                                    <p>Send us your comment and we will reach you through your email.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                
+                                <form id="contacts-form" class="contacts-form" action="" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="contacts-icon contactss-name">
+                                                {{form.name}}
+                                                <p style="color: red;">{{form.errors.name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="contacts-icon contactss-email">
+                                                {{form.email}}
+                                                <p style="color: red;">{{form.errors.email}}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="contacts-icon contactss-message">
+                                                {{form.message}}
+                                                <p style="color: red;">{{form.errors.message}}</p>
+                                                <!-- <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Your Comments...."></textarea> -->
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="contacts-form-button text-center">
+                                                <button class="c-btn">
+                                                    send message 
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact-area-end -->
+
+    <!-- map-area-start -->
+    <div class="map-area">
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7880.659588049196!2d38.846092!3d9.03365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd291f77d83e00a2d!2zRGFpbHkgTWluaSBNYXJ0IHwgV2VzZW4gfCDhi7Thi63hiIog4Yia4YqSIOGIm-GIreGJtSB8IOGLiOGIsOGKlQ!5e0!3m2!1sen!2set!4v1652522549188!5m2!1sen!2set" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- map-area-end -->
+
+  
+</main>
+{% endblock %}

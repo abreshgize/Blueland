@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load core_tags %}
+{% block product %} active {% endblock %}   
+{% block title %} Product List {%endblock %} 
+{% block link %}  
+<li><span style="color:#fff;">Category Products</span></li>
+
+{% endblock %}
+{% block style %} 
+<style>
+.prod_num {
+    position: absolute;
+    left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    height: 25px;
+    width: 20px;
+    line-height: 25px;
+    /* top: 10px; */
+    border-radius: 5px;
+    }
+</style>
+{% endblock %} 
+
+{% block content %} 
+<div class="main">
+     <!-- shop-full-area-start -->
+     <div class="sh0p-area pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 shop1-sidebar">
+                    <div class="category-sidebar cat-side mb-30">
+                        <h3 class="cat-title">Sub Categories</h3>
+                        <div class="category-item">
+                            <ul>
+                                {% for s in cat.subcategory_set.all %}
+                                    <li >
+                                        <a  {% if sub.id  == s.id %} style="color:#4e97fd" {% endif %} href="{% url 'main:subcat_prods' pk=s.id %}">
+                                            {{s.name}} 
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- category detail -->
+                    <div class="category-sidebar cat-side mb-30">
+                        <h3 class="cat-title">{{cat.name}}</h3>
+                        <div class="product-11-wrapper text-center">
+                            <p>{{cat.desc}}</p>
+                        </div>
+                    </div>
+                    <!-- category detail -->
+                </div>
+
+
+                <div class="col-xl-9 col-lg-9 pt-1" style="background-color: #eff1f9;">
+                    <div class="pro-ful-tab">
+                        <div class="row mb-20">
+                            <div class="col-xl-3 col-lg-3 col-md-3">
+                                <div class="product-02-tab mb-20">
+                                    <ul class="nav justify-content-start product-nav" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                                aria-controls="home" aria-selected="true">
+                                                <i class="fas fa-th-large"></i>
+                                            </a>
+                                        </li>
+                                        <!-- <li class="nav-item">
+                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                                aria-controls="profile" aria-selected="false">
+                                                <i class="fas fa-bars"></i>
+                                            </a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="pro-tab1-content pt-15 mb-20 text-center">
+                                    <!-- <h4>Showing 20 Results Of {{prods.count}} Products</h4> -->
+                                </div>
+                            </div>
+                            <!-- <div class="col-xl-3 col-lg-3 col-md-3">
+                                <div class="pro-filter mb-20 f-right">
+                                    <form action="#">
+                                        <select name="pro-filter" id="pro-filter">
+                                            <option value="1">Default Type </option>
+                                            <option value="2">Top Sales </option>
+                                            <option value="3">New Product </option>
+                                            <option value="4">A to Z Product </option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div> -->
+                        </div>
+
+
+                        <div class="product-tab-content">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="row">
+
+                                        {% for p in prods %}
+                                        <div class="col-xl-4 cl-lg-4 col-md-6">
+                                            <div class="product-03-wrapper grey-2-bg pos-rel text-center mb-30">
+                                                <div class="row">
+                                                    {% if p.hot %}
+                                                        <div class="col-4 badge-tag">
+                                                            <span class="product-tag pro-tag hot-1">Hot</span>
+                                                           
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if p.new %} 
+                                                        <div class="col-4 badge-tag">
+                                                            <span class="product-tag pro-tag hot-1 hot-2">new</span>
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                                
+
+                                                <div class="product-02-img pos-rel">
+                                                    <a href="{% url 'main:product_detail' pk=p.id %}">
+                                                        <img src="{{p.main_image|get_img}}" height="310px" alt="">
+                                                    </a>
+                                                    <!-- <div class="product-action">
+                                                        <a class="action-btn" href="#"><i class="far fa-heart"></i></a>
+                                                        <a class="action-btn" href="#"><i class="far fa-cart-plus"></i></a>
+                                                        <a class="action-btn" href="#"><i class="far fa-search"></i></a>
+                                                    </div> -->
+                                                </div>
+                                                <div class="product-text">
+                                                    <h5>{% if p.ref %} REF {{p.ref}} {% endif %}</h5>
+                                                    <h4><a href="{% url 'main:product_detail' pk=p.id %}">{{p.name}}</a></h4>
+                                                    <span>{{p.brand}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                       
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-xl-12">
+                                <div class="basic-pagination mt-20 basic-pagination-2 text-center">
+                                    <ul>
+                                        <li><a href="#"><i class="far fa-angle-left"></i></a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#"><i class="far fa-angle-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- shop-full-area-area -->
+</div>
+{% endblock %}
